@@ -40,28 +40,28 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen" style={{ background: '#eaf4fb', color: '#1d1d1f', fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif' }}>
       {/* Navigation */}
-      <nav className="bg-blue-900 shadow-lg fixed w-full top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-white flex items-center">
-              🐧 Portfolio
+      <nav className="bg-white/80 backdrop-blur shadow-none border-b border-blue-100 fixed w-full top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center py-6">
+            <div className="text-2xl font-extrabold tracking-tight" style={{ color: '#2563eb' }}>
+              🐧 Laura YU
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <a href="#home" className="text-blue-200 hover:text-white transition duration-300">Home</a>
-              <a href="#about" className="text-blue-200 hover:text-white transition duration-300">About</a>
-              <a href="#education" className="text-blue-200 hover:text-white transition duration-300">Education</a>
-              <a href="#projects" className="text-blue-200 hover:text-white transition duration-300">Projects</a>
-              <a href="#contact" className="text-blue-200 hover:text-white transition duration-300">Contact</a>
+            <div className="hidden md:flex space-x-10">
+              <a href="#home" className="hover:text-[#2563eb] transition text-base font-medium">Home</a>
+              <a href="#experience" className="hover:text-[#2563eb] transition text-base font-medium">Work Experience</a>
+              <a href="#education" className="hover:text-[#2563eb] transition text-base font-medium">Education</a>
+              <a href="#projects" className="hover:text-[#2563eb] transition text-base font-medium">Projects</a>
+              <a href="#contact" className="hover:text-[#2563eb] transition text-base font-medium">Contact</a>
             </div>
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-white focus:outline-none"
+              className="md:hidden text-[#2563eb] focus:outline-none"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -74,11 +74,11 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden pb-4">
               <div className="flex flex-col space-y-4">
-                <a href="#home" className="text-blue-200 hover:text-white transition duration-300" onClick={() => setIsMenuOpen(false)}>Home</a>
-                <a href="#about" className="text-blue-200 hover:text-white transition duration-300" onClick={() => setIsMenuOpen(false)}>About</a>
-                <a href="#education" className="text-blue-200 hover:text-white transition duration-300" onClick={() => setIsMenuOpen(false)}>Education</a>
-                <a href="#projects" className="text-blue-200 hover:text-white transition duration-300" onClick={() => setIsMenuOpen(false)}>Projects</a>
-                <a href="#contact" className="text-blue-200 hover:text-white transition duration-300" onClick={() => setIsMenuOpen(false)}>Contact</a>
+                <a href="#home" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Home</a>
+                <a href="#experience" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Work Experience</a>
+                <a href="#education" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Education</a>
+                <a href="#projects" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Projects</a>
+                <a href="#contact" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Contact</a>
               </div>
             </div>
           )}
@@ -86,130 +86,111 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20 pt-24 md:pt-20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="text-4xl md:text-6xl mb-4">🐧</div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 px-4">Welcome to My Portfolio</h1>
-          <p className="text-lg md:text-xl mb-6 md:mb-8 px-4">Data Scientist & Digital Consultant</p>
-          <p className="text-base md:text-lg mb-6 md:mb-8 text-blue-200 px-4">Solving business problems with data, code, and a bit of penguin magic! 🐧📊</p>
-          <button className="bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 shadow-lg text-sm md:text-base">
-            View My Work 🐧
-          </button>
+      <section id="home" className="pt-32 pb-20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="text-6xl mb-6" style={{ color: '#2563eb' }}>🐧</div>
+          <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ color: '#1d1d1f' }}>Welcome to My Portfolio</h1>
+          <p className="text-xl mb-8 text-gray-700">Data Scientist & Digital Consultant</p>
+          <p className="text-lg mb-10 text-gray-500">Solving business problems with data, code, and a bit of penguin magic! 🐧📊</p>
+          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">View My Work 🐧</button>
         </div>
       </section>
+      {/* Divider */}
+      <div className="flex justify-center my-12">
+        <div className="h-1 w-64 rounded-full bg-gradient-to-r from-[#dbeafe] via-[#2563eb] to-[#dbeafe] shadow-sm" />
+      </div>
 
       {/* About Section */}
-      <section id="about" className="py-12 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">About Me 🐧</h2>
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <img 
-                src="https://via.placeholder.com/400x300/1e40af/ffffff?text=🐧" 
-                alt="Profile" 
-                className="rounded-lg shadow-lg border-4 border-blue-200 w-full max-w-md mx-auto"
-              />
+      <section id="about" className="py-20">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ color: '#1d1d1f' }}>About Me 🐧</h2>
+          <h3 className="text-2xl font-bold mb-4" style={{ color: '#2563eb' }}>Hello, I'm Laura YU 🐧</h3>
+          <p className="text-gray-700 mb-8 text-lg">
+            I'm a Data Scientist and Digital Consultant with 2 years of experience in the corporate world. I graduated two years ago and have been helping businesses make data-driven decisions ever since. Just like penguins thrive in teams, I love collaborating to solve complex problems with data, analytics, and technology! 🐧📈
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[200px]">
+              <h4 className="font-semibold text-[#2563eb] text-base mb-2">Data Science</h4>
+              <p className="text-sm text-gray-600">Python, Machine Learning, Data Visualization</p>
             </div>
-            <div className="order-1 lg:order-2 text-center lg:text-left">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-blue-800">Hello, I'm Laura YU 🐧</h3>
-              <p className="text-gray-600 mb-6 text-sm md:text-base">
-                I'm a Data Scientist and Digital Consultant with 2 years of experience in the corporate world. I graduated two years ago and have been helping businesses make data-driven decisions ever since. Just like penguins thrive in teams, I love collaborating to solve complex problems with data, analytics, and technology! 🐧📈
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Data Science</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Python, Machine Learning, Data Visualization</p>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Digital Consulting</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Business Analytics, Digital Strategy, Communication</p>
-                </div>
-              </div>
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[200px]">
+              <h4 className="font-semibold text-[#2563eb] text-base mb-2">Digital Consulting</h4>
+              <p className="text-sm text-gray-600">Business Analytics, Digital Strategy, Communication</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Work Experience Section */}
-      <section id="experience" className="py-12 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">Work Experience 💼</h2>
-          <div className="flex flex-col gap-6">
+      <section id="experience" className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ color: '#1d1d1f' }}>Work Experience 💼</h2>
+          <div className="flex flex-col gap-8">
             {/* ARUP Group Limited Full-Time Experience */}
-            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
-              <div className="text-left w-full">
-                <h3 className="text-xl font-semibold text-blue-800">Assistant Digital Consultant / Assistant Data Scientist</h3>
-                <p className="text-gray-700 mb-1">ARUP Group Limited, Hong Kong | Apr 2025 – Present (Assistant Digital Consultant), Jun 2025 – Apr 2025 (Assistant Data Scientist)</p>
-                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
-                  <li>Developed and deployed data-driven solutions to solve business problems</li>
-                  <li>Collaborated with cross-functional teams to deliver digital transformation projects</li>
-                  <li>Utilized machine learning, analytics, and visualization to drive decision-making</li>
-                  <li>Communicated insights and recommendations to stakeholders</li>
-                </ul>
-              </div>
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-2 text-[#2563eb]">Assistant Digital Consultant / Assistant Data Scientist</h3>
+              <p className="text-gray-700 mb-2">ARUP Group Limited, Hong Kong | Apr 2025 – Present (Assistant Digital Consultant), Jun 2025 – Apr 2025 (Assistant Data Scientist)</p>
+              <ul className="list-disc list-inside text-gray-600 text-base mb-1 pl-4 text-left">
+                <li>Developed and deployed data-driven solutions to solve business problems</li>
+                <li>Collaborated with cross-functional teams to deliver digital transformation projects</li>
+                <li>Utilized machine learning, analytics, and visualization to drive decision-making</li>
+                <li>Communicated insights and recommendations to stakeholders</li>
+              </ul>
             </div>
             {/* Grant Thornton China Internship */}
-            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
-              <div className="text-left w-full">
-                <h3 className="text-xl font-semibold text-blue-800">Technology Consultant Intern</h3>
-                <p className="text-gray-700 mb-1">Grant Thornton China, Beijing, China | Nov 2022 – Jan 2023</p>
-                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
-                  <li>Conducted comprehensive risk assessment of company’s IT infrastructure, policies, and operations in the context of East 5.0 Chinese Bank Data Governance Guidelines and completed audit working papers</li>
-                  <li>Assisted the review of internal audit plans and related follow-ups, and performed the tests of data validation in SQL</li>
-                </ul>
-              </div>
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-2 text-[#2563eb]">Technology Consultant Intern</h3>
+              <p className="text-gray-700 mb-2">Grant Thornton China, Beijing, China | Nov 2022 – Jan 2023</p>
+              <ul className="list-disc list-inside text-gray-600 text-base mb-1 pl-4 text-left">
+                <li>Conducted comprehensive risk assessment of company’s IT infrastructure, policies, and operations in the context of East 5.0 Chinese Bank Data Governance Guidelines and completed audit working papers</li>
+                <li>Assisted the review of internal audit plans and related follow-ups, and performed the tests of data validation in SQL</li>
+              </ul>
             </div>
             {/* SAIF Partners China Internship */}
-            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
-              <div className="text-left w-full">
-                <h3 className="text-xl font-semibold text-blue-800">Summer Analyst Intern</h3>
-                <p className="text-gray-700 mb-1">SAIF Partners China, Xiamen, China | Jul 2019 – Aug 2019</p>
-                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
-                  <li>Performed Chinese heating household appliances industry analysis, identified target companies and proposed investment ideas and thesis to branch senior management, and drafted presentations for weekly meetings</li>
-                  <li>Assisted in-depth financial and operational due-diligence process on client company, analysed market trends, competition, and potential strategic partners using information obtained from multiple data sources</li>
-                </ul>
-              </div>
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-2 text-[#2563eb]">Summer Analyst Intern</h3>
+              <p className="text-gray-700 mb-2">SAIF Partners China, Xiamen, China | Jul 2019 – Aug 2019</p>
+              <ul className="list-disc list-inside text-gray-600 text-base mb-1 pl-4 text-left">
+                <li>Performed Chinese heating household appliances industry analysis, identified target companies and proposed investment ideas and thesis to branch senior management, and drafted presentations for weekly meetings</li>
+                <li>Assisted in-depth financial and operational due-diligence process on client company, analysed market trends, competition, and potential strategic partners using information obtained from multiple data sources</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-12 md:py-20 bg-blue-100">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">Education 🎓</h2>
-          <div className="flex flex-col gap-6">
+      <section id="education" className="py-20" style={{ background: '#eaf4fb' }}>
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ color: '#1d1d1f' }}>Education 🎓</h2>
+          <div className="flex flex-col gap-8">
             {/* UCL MSc */}
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600">
-              <div className="text-left w-full">
-                <h3 className="text-xl font-semibold text-blue-800">University College London — MSc Computer Science</h3>
-                <p className="text-gray-700">Grade: Merit | Member of UCL Chinese Students and Scholars Association (UCL CSSA)</p>
-                <p className="text-gray-500 text-sm mb-1">Core Modules: Software Engineering, Machine Learning, Artificial Intelligence, App Design, Database</p>
-                <p className="text-gray-500 text-sm">Summer Project: Learning Teddy Bear (Voice Assistant Development with IBM)</p>
-              </div>
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-2 text-[#2563eb]">University College London — MSc Computer Science</h3>
+              <p className="text-gray-700">Grade: Merit | Member of UCL Chinese Students and Scholars Association (UCL CSSA)</p>
+              <p className="text-gray-500 text-base mb-1">Core Modules: Software Engineering, Machine Learning, Artificial Intelligence, App Design, Database</p>
+              <p className="text-gray-500 text-base">Summer Project: Learning Teddy Bear (Voice Assistant Development with IBM)</p>
             </div>
             {/* Liverpool BA */}
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600">
-              <div className="text-left w-full">
-                <h3 className="text-xl font-semibold text-blue-800">University of Liverpool — BA (Hons) Accounting and Finance</h3>
-                <p className="text-gray-700">First Class with Honours; 3-year university scholarship as top academic performer in Management School</p>
-                <p className="text-gray-500 text-sm mb-1">Core Modules: Corporate Finance, Financial Reporting, Audit, Advanced Accounting, Economics, Econometrics</p>
-                <p className="text-gray-500 text-sm">Final-year project: UK online retail study – fundamental analysis, valuation, and stock recommendation of ASOS</p>
-              </div>
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-2 text-[#2563eb]">University of Liverpool — BA (Hons) Accounting and Finance</h3>
+              <p className="text-gray-700">First Class with Honours; 3-year university scholarship as top academic performer in Management School</p>
+              <p className="text-gray-500 text-base mb-1">Core Modules: Corporate Finance, Financial Reporting, Audit, Advanced Accounting, Economics, Econometrics</p>
+              <p className="text-gray-500 text-base">Final-year project: UK online retail study – fundamental analysis, valuation, and stock recommendation of ASOS</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 md:py-20 bg-blue-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">My Projects 🐧</h2>
-          <div className="flex items-center justify-center gap-2 md:gap-4">
+      <section id="projects" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ color: '#1d1d1f' }}>My Projects 🐧</h2>
+          <div className="flex items-center justify-center gap-4">
             <button
               aria-label="Previous project"
               onClick={prevProject}
-              className="rounded-full bg-blue-200 hover:bg-blue-300 text-blue-800 p-3 shadow transition disabled:opacity-50"
+              className="rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] text-[#2563eb] p-3 shadow transition disabled:opacity-50"
               disabled={projects.length <= 1}
             >
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
@@ -220,14 +201,14 @@ function App() {
                 return (
                   <div
                     key={idx}
-                    className="flex-1 mx-1 md:mx-2 min-w-[22rem] max-w-lg h-[22rem] md:h-[20rem] bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start border border-blue-100 transition-all duration-500"
+                    className="flex-1 mx-2 min-w-[22rem] max-w-lg h-[24rem] bg-white rounded-3xl shadow-xl p-10 flex flex-col items-start border border-blue-100 transition-all duration-500"
                     style={{ opacity: 1 }}
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-blue-800 mb-2">{projects[idx].title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{projects[idx].desc}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-[#2563eb] mb-3">{projects[idx].title}</h3>
+                    <p className="text-gray-700 mb-6 line-clamp-3">{projects[idx].desc}</p>
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {projects[idx].tags.map((tag) => (
-                        <span key={tag} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
+                        <span key={tag} className="bg-[#dbeafe] text-[#2563eb] px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -237,17 +218,17 @@ function App() {
             <button
               aria-label="Next project"
               onClick={nextProject}
-              className="rounded-full bg-blue-200 hover:bg-blue-300 text-blue-800 p-3 shadow transition disabled:opacity-50"
+              className="rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] text-[#2563eb] p-3 shadow transition disabled:opacity-50"
               disabled={projects.length <= 1}
             >
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
             </button>
           </div>
-          <div className="flex justify-center mt-4 gap-2">
+          <div className="flex justify-center mt-6 gap-2">
             {projects.map((_, idx) => (
               <button
                 key={idx}
-                className={`w-2 h-2 rounded-full ${idx === projectIdx ? 'bg-blue-800' : 'bg-blue-200'}`}
+                className={`w-2.5 h-2.5 rounded-full ${idx === projectIdx ? 'bg-[#2563eb]' : 'bg-[#dbeafe]'}`}
                 onClick={() => setProjectIdx(idx)}
                 aria-label={`Go to project ${idx + 1}`}
               />
@@ -257,45 +238,43 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-blue-800 px-4">Get In Touch 🐧</h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 px-4">
+      <section id="contact" className="py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ color: '#1d1d1f' }}>Get In Touch 🐧</h2>
+          <p className="text-lg text-gray-700 mb-8">
             I'm always interested in new opportunities and exciting projects. 
             Feel free to reach out! As friendly as a penguin! 🐧❤️
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-            <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
               <div className="text-2xl mb-2">📧</div>
-              <h3 className="font-semibold text-blue-800 text-sm md:text-base">Email</h3>
-              <p className="text-gray-600 text-sm md:text-base">your.email@example.com</p>
+              <h3 className="font-semibold text-[#2563eb] text-base mb-1">Email</h3>
+              <p className="text-gray-700 text-base">your.email@example.com</p>
             </div>
-            <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
               <div className="text-2xl mb-2">📱</div>
-              <h3 className="font-semibold text-blue-800 text-sm md:text-base">Phone</h3>
-              <p className="text-gray-600 text-sm md:text-base">+1 (555) 123-4567</p>
+              <h3 className="font-semibold text-[#2563eb] text-base mb-1">Phone</h3>
+              <p className="text-gray-700 text-base">+1 (555) 123-4567</p>
             </div>
-            <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
               <div className="text-2xl mb-2">📍</div>
-              <h3 className="font-semibold text-blue-800 text-sm md:text-base">Location</h3>
-              <p className="text-gray-600 text-sm md:text-base">Hong Kong</p>
+              <h3 className="font-semibold text-[#2563eb] text-base mb-1">Location</h3>
+              <p className="text-gray-700 text-base">Hong Kong</p>
             </div>
           </div>
-          <button className="bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg text-sm md:text-base">
-            Send Message 🐧
-          </button>
+          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">Send Message 🐧</button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-6 md:py-8">
+      <footer className="bg-white border-t border-blue-100 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm md:text-base">&copy; 2025 Laura YU. All rights reserved. 🐧</p>
-          <div className="flex justify-center space-x-4 md:space-x-6 mt-3 md:mt-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition duration-300 text-sm md:text-base">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition duration-300 text-sm md:text-base">GitHub</a>
+          <p className="text-base text-gray-500">&copy; 2025 Laura YU. All rights reserved. 🐧</p>
+          <div className="flex justify-center space-x-6 mt-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">GitHub</a>
           </div>
-          <div className="mt-3 md:mt-4 text-blue-200 text-sm md:text-base">
+          <div className="mt-4 text-blue-200 text-base">
             Made with ❤️ and 🐧
           </div>
         </div>
