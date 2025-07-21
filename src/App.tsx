@@ -92,7 +92,7 @@ function App() {
           <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ color: '#1d1d1f' }}>Welcome to My Portfolio</h1>
           <p className="text-xl mb-8 text-gray-700">Data Scientist & Digital Consultant</p>
           <p className="text-lg mb-10 text-gray-500">Solving business problems with data, code, and a bit of penguin magic! 🐧📊</p>
-          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">View My Work 🐧</button>
+          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">View My Work</button>
         </div>
       </section>
       {/* Divider */}
@@ -103,8 +103,10 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ color: '#1d1d1f' }}>About Me 🐧</h2>
-          <h3 className="text-2xl font-bold mb-4" style={{ color: '#2563eb' }}>Hello, I'm Laura YU 🐧</h3>
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 flex items-center justify-center gap-3" style={{ color: '#1d1d1f' }}>
+            About Me <span className="text-3xl align-middle">👩‍💻</span>
+          </h2>
+          <h3 className="text-2xl font-bold mb-4" style={{ color: '#2563eb' }}>Hello, I'm Laura YU</h3>
           <p className="text-gray-700 mb-8 text-lg">
             I'm a Data Scientist and Digital Consultant with 2 years of experience in the corporate world. I graduated two years ago and have been helping businesses make data-driven decisions ever since. Just like penguins thrive in teams, I love collaborating to solve complex problems with data, analytics, and technology! 🐧📈
           </p>
@@ -185,7 +187,9 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ color: '#1d1d1f' }}>My Projects 🐧</h2>
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center flex items-center justify-center gap-3" style={{ color: '#1d1d1f' }}>
+            My Projects <span className="text-3xl align-middle">💡</span>
+          </h2>
           <div className="flex items-center justify-center gap-4">
             <button
               aria-label="Previous project"
@@ -201,10 +205,10 @@ function App() {
                 return (
                   <div
                     key={idx}
-                    className="flex-1 mx-2 min-w-[22rem] max-w-lg h-[24rem] bg-white rounded-3xl shadow-xl p-10 flex flex-col items-start border border-blue-100 transition-all duration-500"
+                    className="flex-1 mx-1 md:mx-2 min-w-[16rem] max-w-xs md:min-w-[22rem] md:max-w-lg h-auto md:h-[24rem] bg-white rounded-3xl shadow-xl p-5 md:p-10 flex flex-col items-start border border-blue-100 transition-all duration-500"
                     style={{ opacity: 1 }}
                   >
-                    <h3 className="text-xl md:text-2xl font-bold text-[#2563eb] mb-3">{projects[idx].title}</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-[#2563eb] mb-3">{projects[idx].title}</h3>
                     <p className="text-gray-700 mb-6 line-clamp-3">{projects[idx].desc}</p>
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {projects[idx].tags.map((tag) => (
@@ -245,18 +249,18 @@ function App() {
             I'm always interested in new opportunities and exciting projects. 
             Feel free to reach out! As friendly as a penguin! 🐧❤️
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
+          <div className="flex flex-row flex-wrap justify-center gap-4 md:gap-8 mb-8">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
               <div className="text-2xl mb-2">📧</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Email</h3>
               <p className="text-gray-700 text-base">your.email@example.com</p>
             </div>
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
               <div className="text-2xl mb-2">📱</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Phone</h3>
               <p className="text-gray-700 text-base">+1 (555) 123-4567</p>
             </div>
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
               <div className="text-2xl mb-2">📍</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Location</h3>
               <p className="text-gray-700 text-base">Hong Kong</p>
