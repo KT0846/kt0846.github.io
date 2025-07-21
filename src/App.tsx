@@ -75,7 +75,7 @@ function App() {
               />
             </div>
             <div className="order-1 lg:order-2 text-center lg:text-left">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-blue-800">Hello, I'm [Your Name] 🐧</h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-blue-800">Hello, I'm Laura YU 🐧</h3>
               <p className="text-gray-600 mb-6 text-sm md:text-base">
                 I'm a Data Scientist and Digital Consultant with 2 years of experience in the corporate world. I graduated two years ago and have been helping businesses make data-driven decisions ever since. Just like penguins thrive in teams, I love collaborating to solve complex problems with data, analytics, and technology! 🐧📈
               </p>
@@ -88,6 +88,50 @@ function App() {
                   <h4 className="font-semibold text-blue-800 text-sm md:text-base">Digital Consulting</h4>
                   <p className="text-xs md:text-sm text-gray-600">Business Analytics, Digital Strategy, Communication</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience Section */}
+      <section id="experience" className="py-12 md:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">Work Experience 💼</h2>
+          <div className="flex flex-col gap-6">
+            {/* ARUP Group Limited Full-Time Experience */}
+            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+              <div className="text-left w-full">
+                <h3 className="text-xl font-semibold text-blue-800">Assistant Digital Consultant / Assistant Data Scientist</h3>
+                <p className="text-gray-700 mb-1">ARUP Group Limited, Hong Kong | Apr 2025 – Present (Assistant Digital Consultant), Jun 2025 – Apr 2025 (Assistant Data Scientist)</p>
+                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
+                  <li>Developed and deployed data-driven solutions to solve business problems</li>
+                  <li>Collaborated with cross-functional teams to deliver digital transformation projects</li>
+                  <li>Utilized machine learning, analytics, and visualization to drive decision-making</li>
+                  <li>Communicated insights and recommendations to stakeholders</li>
+                </ul>
+              </div>
+            </div>
+            {/* Grant Thornton China Internship */}
+            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+              <div className="text-left w-full">
+                <h3 className="text-xl font-semibold text-blue-800">Technology Consultant Intern</h3>
+                <p className="text-gray-700 mb-1">Grant Thornton China, Beijing, China | Nov 2022 – Jan 2023</p>
+                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
+                  <li>Conducted comprehensive risk assessment of company’s IT infrastructure, policies, and operations in the context of East 5.0 Chinese Bank Data Governance Guidelines and completed audit working papers</li>
+                  <li>Assisted the review of internal audit plans and related follow-ups, and performed the tests of data validation in SQL</li>
+                </ul>
+              </div>
+            </div>
+            {/* SAIF Partners China Internship */}
+            <div className="bg-blue-50 rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+              <div className="text-left w-full">
+                <h3 className="text-xl font-semibold text-blue-800">Summer Analyst Intern</h3>
+                <p className="text-gray-700 mb-1">SAIF Partners China, Xiamen, China | Jul 2019 – Aug 2019</p>
+                <ul className="list-disc list-inside text-gray-600 text-sm mb-1">
+                  <li>Performed Chinese heating household appliances industry analysis, identified target companies and proposed investment ideas and thesis to branch senior management, and drafted presentations for weekly meetings</li>
+                  <li>Assisted in-depth financial and operational due-diligence process on client company, analysed market trends, competition, and potential strategic partners using information obtained from multiple data sources</li>
+                </ul>
               </div>
             </div>
           </div>
