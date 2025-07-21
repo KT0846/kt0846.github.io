@@ -2,6 +2,42 @@ import React, { useState } from 'react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const projects = [
+    {
+      title: 'Customer Segmentation Analysis 🐧',
+      desc: 'Used clustering and machine learning to identify key customer segments for a major client.',
+      tags: ['Python', 'Machine Learning', 'Data Viz'],
+    },
+    {
+      title: 'Digital Transformation Roadmap 🐧',
+      desc: 'Developed a digital strategy and analytics dashboard for a corporate client to drive business growth.',
+      tags: ['Consulting', 'Strategy', 'Dashboard'],
+    },
+    {
+      title: 'Sales Forecasting Model 🐧',
+      desc: 'Built a predictive model to forecast sales and optimize inventory for a retail client.',
+      tags: ['Forecasting', 'Python', 'Business'],
+    },
+    {
+      title: 'Baby Concentration Tracker App Development 🐧',
+      desc: 'Collaboratively coded a mobile app using Node.js, React Native and MySQL that allows users to monitor a baby’s mental development through playing slideshows with images and providing a visualisation of the baby’s progress. Implemented a comprehensive testing strategy for unit, integration and stress testing using jest and K6.',
+      tags: ['Node.js', 'React Native', 'MySQL', 'Jest', 'K6'],
+    },
+    {
+      title: 'Online Auction Website Development 🐧',
+      desc: 'Led a team of 4 to develop an online auction site using a MAMP stack that allows users to buy and sell items and provides users with recommendations through collaborative filtering.',
+      tags: ['MAMP', 'Team Leadership', 'Collaborative Filtering'],
+    },
+  ];
+  const [projectIdx, setProjectIdx] = useState(0);
+  const prevProject = () => setProjectIdx((i) => (i === 0 ? projects.length - 1 : i - 1));
+  const nextProject = () => setProjectIdx((i) => (i === projects.length - 1 ? 0 : i + 1));
+
+  // Carousel logic for 3-card display
+  const getProject = (offset: number) => {
+    const idx = (projectIdx + offset + projects.length) % projects.length;
+    return projects[idx];
+  };
 
   return (
     <div className="min-h-screen bg-blue-50">
@@ -169,58 +205,53 @@ function App() {
       <section id="projects" className="py-12 md:py-20 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 px-4">My Projects 🐧</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* Project 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-blue-200 hover:shadow-xl transition duration-300">
-              <img 
-                src="https://via.placeholder.com/400x250/1e40af/ffffff?text=🐧+Data+Science" 
-                alt="Project 1" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-2 text-blue-800">Customer Segmentation Analysis 🐧</h3>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">Used clustering and machine learning to identify key customer segments for a major client.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Python</span>
-                  <span className="bg-green-100 text-green-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Machine Learning</span>
-                  <span className="bg-purple-100 text-purple-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Data Viz</span>
-                </div>
-              </div>
+          <div className="flex items-center justify-center gap-2 md:gap-4">
+            <button
+              aria-label="Previous project"
+              onClick={prevProject}
+              className="rounded-full bg-blue-200 hover:bg-blue-300 text-blue-800 p-3 shadow transition disabled:opacity-50"
+              disabled={projects.length <= 1}
+            >
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div className="flex items-center justify-center w-full max-w-4xl overflow-hidden">
+              {[ -1, 0, 1 ].map((offset) => {
+                const idx = (projectIdx + offset + projects.length) % projects.length;
+                return (
+                  <div
+                    key={idx}
+                    className="flex-1 mx-1 md:mx-2 min-w-[22rem] max-w-lg h-[22rem] md:h-[20rem] bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start border border-blue-100 transition-all duration-500"
+                    style={{ opacity: 1 }}
+                  >
+                    <h3 className="text-lg md:text-xl font-bold text-blue-800 mb-2">{projects[idx].title}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">{projects[idx].desc}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {projects[idx].tags.map((tag) => (
+                        <span key={tag} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            {/* Project 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-blue-200 hover:shadow-xl transition duration-300">
-              <img 
-                src="https://via.placeholder.com/400x250/1e40af/ffffff?text=🐧+Consulting" 
-                alt="Project 2" 
-                className="w-full h-48 object-cover"
+            <button
+              aria-label="Next project"
+              onClick={nextProject}
+              className="rounded-full bg-blue-200 hover:bg-blue-300 text-blue-800 p-3 shadow transition disabled:opacity-50"
+              disabled={projects.length <= 1}
+            >
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div className="flex justify-center mt-4 gap-2">
+            {projects.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === projectIdx ? 'bg-blue-800' : 'bg-blue-200'}`}
+                onClick={() => setProjectIdx(idx)}
+                aria-label={`Go to project ${idx + 1}`}
               />
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-2 text-blue-800">Digital Transformation Roadmap 🐧</h3>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">Developed a digital strategy and analytics dashboard for a corporate client to drive business growth.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Consulting</span>
-                  <span className="bg-yellow-100 text-yellow-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Strategy</span>
-                  <span className="bg-indigo-100 text-indigo-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Dashboard</span>
-                </div>
-              </div>
-            </div>
-            {/* Project 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-blue-200 hover:shadow-xl transition duration-300 md:col-span-2 lg:col-span-1">
-              <img 
-                src="https://via.placeholder.com/400x250/1e40af/ffffff?text=🐧+Analytics" 
-                alt="Project 3" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-2 text-blue-800">Sales Forecasting Model 🐧</h3>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">Built a predictive model to forecast sales and optimize inventory for a retail client.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Forecasting</span>
-                  <span className="bg-orange-100 text-orange-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Python</span>
-                  <span className="bg-teal-100 text-teal-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">Business</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -247,7 +278,7 @@ function App() {
             <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
               <div className="text-2xl mb-2">📍</div>
               <h3 className="font-semibold text-blue-800 text-sm md:text-base">Location</h3>
-              <p className="text-gray-600 text-sm md:text-base">San Francisco, CA</p>
+              <p className="text-gray-600 text-sm md:text-base">Hong Kong</p>
             </div>
           </div>
           <button className="bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg text-sm md:text-base">
@@ -259,11 +290,10 @@ function App() {
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-6 md:py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm md:text-base">&copy; 2024 Your Name. All rights reserved. 🐧</p>
+          <p className="text-sm md:text-base">&copy; 2025 Laura YU. All rights reserved. 🐧</p>
           <div className="flex justify-center space-x-4 md:space-x-6 mt-3 md:mt-4">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition duration-300 text-sm md:text-base">LinkedIn</a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition duration-300 text-sm md:text-base">GitHub</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition duration-300 text-sm md:text-base">Twitter</a>
           </div>
           <div className="mt-3 md:mt-4 text-blue-200 text-sm md:text-base">
             Made with ❤️ and 🐧
