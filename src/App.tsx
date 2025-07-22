@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +41,21 @@ function App() {
     const idx = (projectIdx + offset + projects.length) % projects.length;
     return projects[idx];
   };
+
+  const [showFooter, setShowFooter] = useState(false);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contactRef.current) return;
+      const rect = contactRef.current.getBoundingClientRect();
+      // Show footer if any part of the contact section is in the viewport
+      setShowFooter(rect.top < window.innerHeight && rect.bottom > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -91,7 +106,7 @@ function App() {
       </nav>
       {/* Fullpage Sections */}
       {/* About Section */}
-      <div id="about" className="section flex flex-col justify-center items-center min-h-screen bg-white">
+      <div id="about" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h3 className="text-5xl font-extrabold mb-4" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>Hello, I'm Laura YU</h3>
           <p className="text-base mb-8" style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif", color: '#222' }}>
@@ -110,7 +125,7 @@ function App() {
         </div>
       </div>
       {/* Work Experience Section */}
-      <div id="experience" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
+      <div id="experience" className="section flex flex-col justify-center items-center min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>Work Experience 💼</h2>
           <div className="flex flex-col gap-8">
@@ -147,13 +162,13 @@ function App() {
         </div>
       </div>
       {/* Education Section */}
-      <div id="education" className="section flex flex-col justify-center items-center min-h-screen bg-white">
+      <div id="education" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>Education 🎓</h2>
-          <div className="relative border-l-4 border-blue-100 ml-6">
+          <div className="relative border-l-4 border-gray-300 ml-6">
             {/* UCL MSc */}
             <div className="mb-12 ml-8 flex flex-col gap-1 relative">
-              <div className="absolute -left-6 top-1 w-5 h-5 bg-white border-4 border-blue-300 rounded-full"></div>
+              <div className="absolute -left-6 top-1 w-5 h-5 bg-white border-4 border-gray-400 rounded-full"></div>
               <span className="text-sm text-gray-500 font-semibold">2021 – 2022</span>
               <h3 className="text-xl font-bold mb-2 text-gray-700">University College London — MSc Computer Science</h3>
               <p className="text-gray-700">Grade: Merit | Member of UCL Chinese Students and Scholars Association (UCL CSSA)</p>
@@ -162,7 +177,7 @@ function App() {
             </div>
             {/* Liverpool BA */}
             <div className="ml-8 flex flex-col gap-1 relative">
-              <div className="absolute -left-6 top-1 w-5 h-5 bg-white border-4 border-blue-300 rounded-full"></div>
+              <div className="absolute -left-6 top-1 w-5 h-5 bg-white border-4 border-gray-400 rounded-full"></div>
               <span className="text-sm text-gray-500 font-semibold">2017 – 2021</span>
               <h3 className="text-xl font-bold mb-2 text-gray-700">University of Liverpool — BA (Hons) Accounting and Finance</h3>
               <p className="text-gray-700">First Class with Honours; 3-year university scholarship as top academic performer in Management School</p>
@@ -173,7 +188,7 @@ function App() {
         </div>
       </div>
       {/* Skills Section */}
-      <div id="skills" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
+      <div id="skills" className="section flex flex-col justify-center items-center min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>Skills 🛠️</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -221,7 +236,7 @@ function App() {
         </div>
       </div>
       {/* Projects Section */}
-      <div id="projects" className="section flex flex-col justify-center items-center min-h-screen bg-white">
+      <div id="projects" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center flex items-center justify-center gap-3" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>
             My Projects <span className="text-3xl align-middle">💡</span>
@@ -230,7 +245,7 @@ function App() {
             <button
               aria-label="Previous project"
               onClick={prevProject}
-              className="rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] text-[#2563eb] p-3 shadow transition disabled:opacity-50"
+              className="rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 p-3 shadow transition disabled:opacity-50"
               disabled={projects.length <= 1}
             >
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
@@ -248,7 +263,7 @@ function App() {
                     <p className="text-gray-700 mb-6 line-clamp-3">{projects[idx].desc}</p>
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {projects[idx].tags.map((tag) => (
-                        <span key={tag} className="bg-[#dbeafe] text-gray-700 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
+                        <span key={tag} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -258,7 +273,7 @@ function App() {
             <button
               aria-label="Next project"
               onClick={nextProject}
-              className="rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] text-[#2563eb] p-3 shadow transition disabled:opacity-50"
+              className="rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 p-3 shadow transition disabled:opacity-50"
               disabled={projects.length <= 1}
             >
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
@@ -268,7 +283,7 @@ function App() {
             {projects.map((_, idx) => (
               <button
                 key={idx}
-                className={`w-2.5 h-2.5 rounded-full ${idx === projectIdx ? 'bg-[#2563eb]' : 'bg-[#dbeafe]'}`}
+                className={`w-2.5 h-2.5 rounded-full ${idx === projectIdx ? 'bg-gray-700' : 'bg-gray-300'}`}
                 onClick={() => setProjectIdx(idx)}
                 aria-label={`Go to project ${idx + 1}`}
               />
@@ -277,7 +292,7 @@ function App() {
         </div>
       </div>
       {/* Get In Touch Section */}
-      <div id="contact" className="section flex flex-col justify-center items-center min-h-screen bg-[#f8fafc]">
+      <div id="contact" ref={contactRef} className="section flex flex-col justify-center items-center min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '0.05em', color: '#111' }}>Get In Touch</h2>
           <p className="text-lg text-gray-700 mb-8">
@@ -295,6 +310,16 @@ function App() {
               <h3 className="font-semibold text-gray-700 text-base mb-1">Location</h3>
               <p className="text-gray-700 text-xs md:text-base break-all">Hong Kong</p>
             </div>
+            <a href="https://www.linkedin.com/in/laura-yu-679788172/" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center transition hover:shadow-lg">
+              <div className="text-2xl mb-2">in</div>
+              <h3 className="font-semibold text-gray-700 text-base mb-1">LinkedIn</h3>
+              <p className="text-gray-700 text-xs md:text-base break-all">laura-yu-679788172</p>
+            </a>
+            <a href="https://github.com/KT0846" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center transition hover:shadow-lg">
+              <div className="text-2xl mb-2">🐙</div>
+              <h3 className="font-semibold text-gray-700 text-base mb-1">GitHub</h3>
+              <p className="text-gray-700 text-xs md:text-base break-all">KT0846</p>
+            </a>
           </div>
           <button
             className="bg-black text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-gray-900 transition mb-2"
@@ -304,14 +329,8 @@ function App() {
           </button>
         </div>
       </div>
-      <footer className="bg-white border-t border-blue-100 py-8 mt-0">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <p className="text-base text-gray-500">&copy; 2025 Laura YU. All rights reserved.</p>
-          <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://www.linkedin.com/in/laura-yu-679788172/" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">LinkedIn</a>
-            <a href="https://github.com/KT0846" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">GitHub</a>
-          </div>
-        </div>
+      <footer className="w-full bg-white/80 backdrop-blur border-t border-blue-100 py-4 text-center shadow z-0">
+        <p className="text-base text-gray-500">&copy; 2025 Laura YU. All rights reserved.</p>
       </footer>
       {/* Add smooth scroll behavior to the document - removed invalid <script> */}
     </>
