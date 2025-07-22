@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [formSent, setFormSent] = useState(false);
   const projects = [
     {
       title: 'Customer Segmentation Analysis 🐧',
@@ -46,7 +49,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="text-2xl font-extrabold tracking-tight" style={{ color: '#2563eb' }}>
-              🐧 Laura YU
+              Laura YU
             </div>
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-10">
@@ -88,7 +91,6 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-6xl mb-6" style={{ color: '#2563eb' }}>🐧</div>
           <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ color: '#1d1d1f' }}>Welcome to My Portfolio</h1>
           <p className="text-xl mb-8 text-gray-700">Data Scientist & Digital Consultant</p>
           <p className="text-lg mb-10 text-gray-500">Solving business problems with data, code, and a bit of penguin magic! 🐧📊</p>
@@ -244,10 +246,10 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ color: '#1d1d1f' }}>Get In Touch 🐧</h2>
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10" style={{ color: '#1d1d1f' }}>Get In Touch</h2>
           <p className="text-lg text-gray-700 mb-8">
-            I'm always interested in new opportunities and exciting projects. 
-            Feel free to reach out! As friendly as a penguin! 🐧❤️
+            I'm always interested in new opportunities and exciting projects.
+            Feel free to reach out!
           </p>
           <div className="flex flex-row justify-center gap-4 md:gap-8 mb-8 overflow-x-auto">
             <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
@@ -256,30 +258,27 @@ function App() {
               <p className="text-gray-700 text-xs md:text-base break-all">your.email@example.com</p>
             </div>
             <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
-              <div className="text-2xl mb-2">📱</div>
-              <h3 className="font-semibold text-[#2563eb] text-base mb-1">Phone</h3>
-              <p className="text-gray-700 text-xs md:text-base break-all">+1 (555) 123-4567</p>
-            </div>
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
               <div className="text-2xl mb-2">📍</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Location</h3>
               <p className="text-gray-700 text-xs md:text-base break-all">Hong Kong</p>
             </div>
           </div>
-          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">Send Message 🐧</button>
+          <button
+            className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition"
+            onClick={() => window.open('https://forms.gle/EqSyS5qZW9nFyqKc7', '_blank')}
+          >
+            Send Message
+          </button>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-white border-t border-blue-100 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base text-gray-500">&copy; 2025 Laura YU. All rights reserved. 🐧</p>
+          <p className="text-base text-gray-500">&copy; 2025 Laura YU. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">GitHub</a>
-          </div>
-          <div className="mt-4 text-blue-200 text-base">
-            Made with ❤️ and 🐧
+            <a href="https://www.linkedin.com/in/laura-yu-679788172/" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">LinkedIn</a>
+            <a href="https://github.com/KT0846" target="_blank" rel="noopener noreferrer" className="hover:text-[#2563eb] transition text-base font-medium">GitHub</a>
           </div>
         </div>
       </footer>
