@@ -249,21 +249,21 @@ function App() {
             I'm always interested in new opportunities and exciting projects. 
             Feel free to reach out! As friendly as a penguin! 🐧❤️
           </p>
-          <div className="flex flex-row flex-wrap justify-center gap-4 md:gap-8 mb-8">
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
+          <div className="flex flex-row justify-center gap-4 md:gap-8 mb-8 overflow-x-auto">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
               <div className="text-2xl mb-2">📧</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Email</h3>
-              <p className="text-gray-700 text-base">your.email@example.com</p>
+              <p className="text-gray-700 text-xs md:text-base break-all">your.email@example.com</p>
             </div>
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
               <div className="text-2xl mb-2">📱</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Phone</h3>
-              <p className="text-gray-700 text-base">+1 (555) 123-4567</p>
+              <p className="text-gray-700 text-xs md:text-base break-all">+1 (555) 123-4567</p>
             </div>
-            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-[140px] max-w-[220px]">
+            <div className="bg-white p-6 rounded-3xl border border-blue-100 shadow-md flex-1 min-w-0 max-w-[220px] flex flex-col items-center">
               <div className="text-2xl mb-2">📍</div>
               <h3 className="font-semibold text-[#2563eb] text-base mb-1">Location</h3>
-              <p className="text-gray-700 text-base">Hong Kong</p>
+              <p className="text-gray-700 text-xs md:text-base break-all">Hong Kong</p>
             </div>
           </div>
           <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">Send Message 🐧</button>
