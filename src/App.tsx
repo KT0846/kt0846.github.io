@@ -49,13 +49,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="text-2xl font-extrabold tracking-tight" style={{ color: '#2563eb' }}>
-              Laura YU
+              My Portfolio
             </div>
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-10">
               <a href="#home" className="hover:text-[#2563eb] transition text-base font-medium">Home</a>
               <a href="#experience" className="hover:text-[#2563eb] transition text-base font-medium">Work Experience</a>
               <a href="#education" className="hover:text-[#2563eb] transition text-base font-medium">Education</a>
+              <a href="#skills" className="hover:text-[#2563eb] transition text-base font-medium">Skills</a>
               <a href="#projects" className="hover:text-[#2563eb] transition text-base font-medium">Projects</a>
               <a href="#contact" className="hover:text-[#2563eb] transition text-base font-medium">Contact</a>
             </div>
@@ -80,6 +81,7 @@ function App() {
                 <a href="#home" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Home</a>
                 <a href="#experience" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Work Experience</a>
                 <a href="#education" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Education</a>
+                <a href="#skills" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Skills</a>
                 <a href="#projects" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Projects</a>
                 <a href="#contact" className="hover:text-[#2563eb] transition text-base font-medium" onClick={() => setIsMenuOpen(false)}>Contact</a>
               </div>
@@ -88,27 +90,10 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-32 pb-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ color: '#1d1d1f' }}>Welcome to My Portfolio</h1>
-          <p className="text-xl mb-8 text-gray-700">Data Scientist & Digital Consultant</p>
-          <p className="text-lg mb-10 text-gray-500">Solving business problems with data, code, and a bit of penguin magic! 🐧📊</p>
-          <button className="bg-[#2563eb] text-white px-10 py-4 rounded-full font-semibold text-lg shadow hover:bg-[#1746a2] transition">View My Work</button>
-        </div>
-      </section>
-      {/* Divider */}
-      <div className="flex justify-center my-12">
-        <div className="h-1 w-64 rounded-full bg-gradient-to-r from-[#dbeafe] via-[#2563eb] to-[#dbeafe] shadow-sm" />
-      </div>
-
       {/* About Section */}
-      <section id="about" className="py-20">
+      <section id="about" className="pt-48 pb-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight mb-10 flex items-center justify-center gap-3" style={{ color: '#1d1d1f' }}>
-            About Me <span className="text-3xl align-middle">👩‍💻</span>
-          </h2>
-          <h3 className="text-2xl font-bold mb-4" style={{ color: '#2563eb' }}>Hello, I'm Laura YU</h3>
+          <h3 className="text-5xl font-extrabold mb-4" style={{ color: '#2563eb' }}>Hello, I'm Laura YU</h3>
           <p className="text-gray-700 mb-8 text-lg">
             I'm a Data Scientist and Digital Consultant with 2 years of experience in the corporate world. I graduated two years ago and have been helping businesses make data-driven decisions ever since. Just like penguins thrive in teams, I love collaborating to solve complex problems with data, analytics, and technology! 🐧📈
           </p>
@@ -181,6 +166,55 @@ function App() {
               <p className="text-gray-700">First Class with Honours; 3-year university scholarship as top academic performer in Management School</p>
               <p className="text-gray-500 text-base mb-1">Core Modules: Corporate Finance, Financial Reporting, Audit, Advanced Accounting, Economics, Econometrics</p>
               <p className="text-gray-500 text-base">Final-year project: UK online retail study – fundamental analysis, valuation, and stock recommendation of ASOS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold tracking-tight mb-10 text-center" style={{ color: '#1d1d1f' }}>Skills 🛠️</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Programming */}
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-3 text-[#2563eb]">Programming</h3>
+              <ul className="list-disc list-inside text-gray-700 text-base pl-4">
+                <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)</li>
+                <li>SQL</li>
+                <li>JavaScript (React, Node.js)</li>
+                <li>R</li>
+              </ul>
+            </div>
+            {/* Data Science & Analytics */}
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-3 text-[#2563eb]">Data Science & Analytics</h3>
+              <ul className="list-disc list-inside text-gray-700 text-base pl-4">
+                <li>Machine Learning & Predictive Modeling</li>
+                <li>Data Visualization & Storytelling</li>
+                <li>Statistical Analysis</li>
+                <li>Data Cleaning & Preparation</li>
+              </ul>
+            </div>
+            {/* Consulting & Business */}
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-3 text-[#2563eb]">Consulting & Business</h3>
+              <ul className="list-disc list-inside text-gray-700 text-base pl-4">
+                <li>Digital Transformation</li>
+                <li>Business Analytics</li>
+                <li>Stakeholder Communication</li>
+                <li>Project Management</li>
+              </ul>
+            </div>
+            {/* Tools & Platforms */}
+            <div className="bg-white rounded-3xl shadow-md p-8 border border-blue-100">
+              <h3 className="text-xl font-bold mb-3 text-[#2563eb]">Tools & Platforms</h3>
+              <ul className="list-disc list-inside text-gray-700 text-base pl-4">
+                <li>Tableau, Power BI</li>
+                <li>Excel, Google Sheets</li>
+                <li>Git & GitHub</li>
+                <li>Cloud Platforms (AWS, GCP basics)</li>
+              </ul>
             </div>
           </div>
         </div>
