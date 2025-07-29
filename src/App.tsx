@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import AboutSection from './components/AboutSection';
-import ExperienceSection from './components/ExperienceSection';
-import EducationSection from './components/EducationSection';
+import TimelineSection from './components/TimelineSection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
@@ -13,8 +12,7 @@ function App() {
     <>
       <Navbar />
       <AboutSection />
-      <ExperienceSection />
-      <EducationSection />
+      <TimelineSection />
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />

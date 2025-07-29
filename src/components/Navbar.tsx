@@ -12,8 +12,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
             <a href="#about" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>About</a>
-            <a href="#experience" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Work Experience</a>
-            <a href="#education" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Education</a>
+            <a href="#timeline" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Roadmap</a>
             <a href="#skills" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Skills</a>
             <a href="#projects" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Projects</a>
             <a href="#contact" className="hover:text-gray-700 transition text-base font-medium" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Contact</a>
@@ -37,8 +36,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <a href="#about" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>About</a>
-              <a href="#experience" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Work Experience</a>
-              <a href="#education" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Education</a>
+              <a href="#timeline" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Roadmap</a>
               <a href="#skills" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Skills</a>
               <a href="#projects" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Projects</a>
               <a href="#contact" className="hover:text-gray-700 transition text-base font-medium" onClick={() => setIsMenuOpen(false)} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 'bold', letterSpacing: '0.05em', color: '#111' }}>Contact</a>
